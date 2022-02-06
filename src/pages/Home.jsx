@@ -73,15 +73,11 @@ const Home = (props) => {
     }
   ];
 
-  let dates = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-  let date = new Date(Number(days[0].dt) * 1000).getDay()
-  console.log(dates[date])
-
   const mappedDays = days.map((day, index) => {
     return (
       <Weather
         key = {index}
-        day = {dates[new Date(Number(day.dt) * 1000).getDay()]}
+        day = {day.dt}
         icon = {day.weather[0].icon}
         max = {day.temp.max}
         min = {day.temp.min}
